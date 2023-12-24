@@ -1,6 +1,7 @@
 ﻿using github_profiles.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace github_profiles.Controllers
 {
@@ -34,42 +35,10 @@ namespace github_profiles.Controllers
 
                 await GetTopRepos(username);
             }
-            else
+
+            if (response.StatusCode == HttpStatusCode.NotFound)
             {
-                var dumbProfile = new Profile()
-                {
-                    login = "leticiatakenaka",
-                    followers = "20",
-                    avatar_url = "https://avatars.githubusercontent.com/u/99449687?v=4",
-                    public_repos = 30,
-                };
-
-                ViewData["login"] = dumbProfile.login;
-                ViewData["avatarUrl"] = dumbProfile.avatar_url;
-                ViewData["followers"] = dumbProfile.followers;
-                ViewData["repos"] = dumbProfile.public_repos;
-
-                var dumbTopRepos = new List<Repository>()
-                {
-                    new()
-                    {
-                        name = "Introducao_POO_Controle_Estoque",
-                        html_url = "https://github.com/leticiatakenaka/Introducao_POO_Controle_Estoque",
-                    },
-                    new()
-                    {
-                        name = "Introducao_POO_Exercicio_2",
-                        html_url = "https://github.com/leticiatakenaka/Introducao_POO_Exercicio_2",
-                        description = "Fazer um programa para ler nome e salário de dois funcionários. Depois, mostrar o salário médio dos funcionários"
-                    }, new()
-                    {
-                        name = "Introducao_POO_Exercicio_1",
-                        html_url = "https://github.com/leticiatakenaka/Introducao_POO_Exercicio_1",
-                        description = "Fazer um programa para ler os dados de duas pessoas, depois mostrar o nome da pessoa mais velha."
-                    }
-
-            };
-                ViewData["topFourRepos"] = dumbTopRepos;
+                ViewData["message"] = "User not found";
             }
             return View("Index");
         }

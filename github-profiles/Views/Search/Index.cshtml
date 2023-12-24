@@ -33,10 +33,20 @@
                     <div class="repo-info">
                         <p><strong>@topFourRepos[i].name</strong></p>
                         <p>@topFourRepos[i].description</p>
-                        <a href="@topFourRepos[i].html_url" target="_blank">Acessar repositório</a>
+                        <a href="@topFourRepos[i].html_url" target="_blank">
+                            <button class="btn btn-outline-primary">Acesse o Repositório</button>
+                        </a>
                     </div>
                 }
             }
+        </div>
+    }
+    else
+    {
+        <div class="error">
+        <h2>
+            @ViewData["message"]
+            </h2>
         </div>
     }
 </div>
