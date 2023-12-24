@@ -1,6 +1,6 @@
 # README - ASP.NET MVC Application
 
-I developed this GitHub profile search application as a significant part of my learning journey to strengthen my skills in ASP.NET and C#.</br>
+I developed this GitHub profile search application as a part of my learning journey to strengthen my skills in ASP.NET and C#.</br>
 
 I found inspiration for this project from a challenge posted on [app-ideas](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/GitHub-Profiles.md). 
 
