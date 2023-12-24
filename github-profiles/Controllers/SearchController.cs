@@ -29,9 +29,11 @@ namespace github_profiles.Controllers
                 var profile = JsonConvert.DeserializeObject<Profile>(content);
 
                 ViewData["login"] = profile.login;
+                ViewData["name"] = profile.name;
                 ViewData["avatarUrl"] = profile.avatar_url;
                 ViewData["followers"] = profile.followers;
                 ViewData["repos"] = profile.public_repos;
+                ViewData["bio"] = profile.bio;
 
                 await GetTopRepos(username);
             }

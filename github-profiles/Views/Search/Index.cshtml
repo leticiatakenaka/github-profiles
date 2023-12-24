@@ -19,8 +19,9 @@
     @if (ViewData["login"] != null)
     {
         <div class="user-profile">
-            <p>@ViewData["login"]</p>
             <img src="@ViewData["avatarUrl"]" alt="User Avatar">
+            <h5>@ViewData["name"] - @ViewData["login"]</h5>
+            <p>@ViewData["bio"]</p>
             <p>Followers: @ViewData["followers"]</p>
             <p>Repositories: @ViewData["repos"]</p>
 
