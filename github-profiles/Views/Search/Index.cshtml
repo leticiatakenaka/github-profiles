@@ -3,16 +3,23 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Enter a username</h1>
-    <form asp-controller="Search" asp-action="Results" method="post">
-        <input id="username" name="username" />
-        <button type="submit">Search</button>
+    <h1 class="display-4">Github Profile</h1>
+    <form asp-controller="Search" asp-action="Results" method="post" class="my-5">
+        <div class="mb-3">
+            <div class="input-group">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" aria-describedby="searchButton">
+                <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
+            </div>
+        </div>
     </form>
 </div>
 
-<ul>
-    <li>@ViewData["login"]</li>
-    <li>@ViewData["avatarUrl"]</li>
-    <li>@ViewData["followers"]</li>
-    <li>@ViewData["repos"]</li>
-</ul>
+@if (ViewData["login"] != null)
+{
+    <div class="user-profile">
+        <p>@ViewData["login"]</p>
+        <img src="@ViewData["avatarUrl"]" alt="User Avatar">
+        <p>Followers: @ViewData["followers"]</p>
+        <p>Repositories: @ViewData["repos"]</p>
+    </div>
+}
