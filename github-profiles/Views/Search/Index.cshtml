@@ -1,9 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Search";
+
+    var topFourRepos = ViewData["topFourRepos"] as List<Repository>;
 }
 
 <div class="text-center">
     <h1 class="display-4">Github Profile</h1>
+
     <form asp-controller="Search" asp-action="Results" method="post" class="my-5">
         <div class="mb-3">
             <div class="input-group">
@@ -12,14 +15,38 @@
             </div>
         </div>
     </form>
-</div>
 
-@if (ViewData["login"] != null)
-{
-    <div class="user-profile">
-        <p>@ViewData["login"]</p>
-        <img src="@ViewData["avatarUrl"]" alt="User Avatar">
-        <p>Followers: @ViewData["followers"]</p>
-        <p>Repositories: @ViewData["repos"]</p>
-    </div>
-}
+    @if (ViewData["login"] != null)
+    {
+        <div class="user-profile">
+            <p>@ViewData["login"]</p>
+            <img src="@ViewData["avatarUrl"]" alt="User Avatar">
+            <p>Followers: @ViewData["followers"]</p>
+            <p>Repositories: @ViewData["repos"]</p>
+
+            @if (topFourRepos != null)
+            {
+                int count = topFourRepos.Count < 4 ? topFourRepos.Count : 4;
+
+                for (int i = 0; i < count; i++)
+                {
+                    <div class="repo-info">
+                        <p><strong>@topFourRepos[i].name</strong></p>
+                        <p>@topFourRepos[i].description</p>
+                        <a href="@topFourRepos[i].html_url" target="_blank">
+                            <button class="btn btn-outline-primary">Acesse o Repositório</button>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    }
+    else
+    {
+        <div class="error">
+        <h2>
+            @ViewData["message"]
+            </h2>
+        </div>
+    }
+</div>

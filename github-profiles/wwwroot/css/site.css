@@ -1,5 +1,6 @@
 html {
-    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -10,15 +11,6 @@ html {
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin-bottom: 60px;
 }
 
 body {
@@ -47,21 +39,15 @@ p {
     margin: 10px 0;
 }
 
-.user-profile {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 0 auto;
+.text-center {
+    text-align: center;
 }
 
-img {
-    max-width: 100%;
-    border-radius: 50%;
-}
-
-p {
-    margin: 10px 0;
+.repo-info {
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    text-decoration: none
 }
