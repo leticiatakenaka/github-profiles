@@ -1,6 +1,8 @@
 # README - ASP.NET MVC Application
 
-This README file provides concise instructions on how to set up and run an ASP.NET MVC application.
+I developed this GitHub profile search application as a significant part of my learning journey to strengthen my skills in ASP.NET and C#.</br>
+
+I found inspiration for this project from a challenge posted on [app-ideas](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/GitHub-Profiles.md). 
 
 ## Prerequisites
 
@@ -32,6 +34,11 @@ Ensure you have the following prerequisites installed on your machine:
 6. Open a web browser and navigate to `http://localhost:port` (default port is usually 5000).
 
 The ASP.NET MVC application should now be running on your local machine.
+
+## Credits
+
+- Project idea: [app-ideas](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/GitHub-Profiles.md)
+- GitHub API: [GitHub REST API](https://docs.github.com/en/rest)
 
 ## Additional Notes
 
