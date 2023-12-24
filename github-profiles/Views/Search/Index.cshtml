@@ -4,6 +4,15 @@
 
 <div class="text-center">
     <h1 class="display-4">Enter a username</h1>
-    <input id="username" />
-    <button>Search</button>
+    <form asp-controller="Search" asp-action="Results" method="post">
+        <input id="username" name="username" />
+        <button type="submit">Search</button>
+    </form>
 </div>
+
+<ul>
+    <li>@ViewData["login"]</li>
+    <li>@ViewData["avatarUrl"]</li>
+    <li>@ViewData["followers"]</li>
+    <li>@ViewData["repos"]</li>
+</ul>
